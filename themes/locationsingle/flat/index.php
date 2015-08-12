@@ -64,15 +64,14 @@ function initMap() {
 	$job_bm_locations_country_list = $class_job_bm_locations_functions->job_bm_locations_country_list();
 	
 
-	
-	
-	
-	
-	
-	
 	$html .= '<div class="name">'.$location_post_data->post_title.'<span class="country">'.$job_bm_locations_country_list[$job_bm_location_country_code].'</span></div>';	
-	$html .= '<div class="content">'.wpautop($location_post_data->post_content).'</div>';		
+	$html .= '<div class="content">'.wpautop($location_post_data->post_content).'</div>';	
 	
+	$html .= '<div class="job-list-header">'.__('Jobs available from - '.$location_post_data->post_title.'','job_bm_locations').'</div>';		
+	$html .= do_shortcode('[job_list meta_keys="job_bm_location" location="'.$location_post_data->post_title.'"]');
+		
+		
+		
 	$html .= '</div>'; 	
 
 

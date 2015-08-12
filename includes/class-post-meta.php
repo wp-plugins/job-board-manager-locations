@@ -17,18 +17,27 @@ class class_job_bm_locations_post_meta{
 
 		}
 		
-	
+
 	public function location_meta_options($options = array()){
+
+
+
+	$class_job_bm_locations_functions = new class_job_bm_locations_functions();
+	$job_bm_locations_country_list = $class_job_bm_locations_functions->job_bm_locations_country_list();
+
+
+
 
 
 			$options['Location Info'] = array(
 		
-								'job_bm_location_country'=>array(
+								'job_bm_location_country_code'=>array(
 									'css_class'=>'country',					
 									'title'=>'Country',
 									'option_details'=>'Country, ex: Bangladesh',						
-									'input_type'=>'text', // text, radio, checkbox, select, 
-									'input_values'=>'', // could be array
+									'input_type'=>'select', // text, radio, checkbox, select, 
+									'input_values'=> '', // could be array
+									'input_args'=> $job_bm_locations_country_list,
 									),
 									
 								'job_bm_location_latlang'=>array(

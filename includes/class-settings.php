@@ -37,14 +37,25 @@ class class_job_bm_locations_settings  {
 
 function job_bm_locations_settings_options_extra($options){
 	
-	$options['Company extra'] = array(
-								'job_bm_location_extra'=>array(
-									'css_class'=>'location_extra',					
-									'title'=>'Location _extra',
-									'option_details'=>'Job Location _extra',						
-									'input_type'=>'text', // text, radio, checkbox, select, 
-									'input_values'=>'Dhaka_extra', // could be array
+	$options['Locations'] = array(
+								'job_bm_locations_map_type'=>array(
+									'css_class'=>'map_type',					
+									'title'=>'Map Type',
+									'option_details'=>'Map Type in single location page header',						
+									'input_type'=>'select', // text, radio, checkbox, select, 
+									'input_values'=> array('static'=>'static'), // could be array
+									'input_args'=> array('static'=>'Static','dynamic'=>'Dynamic'),
 									),
+									
+								'job_bm_locations_map_zoom'=>array(
+									'css_class'=>'map_zoom',					
+									'title'=>'Map zoom level',
+									'option_details'=>'Map zoom in single location page header, value (0-20)',						
+									'input_type'=>'text', // text, radio, checkbox, select, 
+									'input_values'=> '', // could be array
+									),	
+
+									
 								);
 	return $options;
 		

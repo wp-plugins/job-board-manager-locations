@@ -67,7 +67,7 @@ class JobBoardManagerLocations{
 		wp_enqueue_script('jquery');
 
 		wp_enqueue_style('job_bm_locations_style', job_bm_locations_plugin_url.'css/style.css');
-		
+
 		wp_enqueue_style('font-awesome', job_bm_locations_plugin_url.'css/font-awesome.css');
 		//ParaAdmin
 		wp_enqueue_style('ParaAdmin', job_bm_locations_plugin_url.'ParaAdmin/css/ParaAdmin.css');

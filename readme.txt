@@ -16,9 +16,20 @@
 
 
 ### Job Board Manager - Locations by http://pickplugins.com
-* [Job Board Manager &raquo;](https://wordpress.org/plugins/job-board-manager/)
+* [Live Demo &raquo;](http://www.pickplugins.com/demo/job-board-manager/single-location/)
+* [Get Job Board Manager &raquo;](https://wordpress.org/plugins/job-board-manager/)
 
+<strong>Location Single page</strong>
 
+If you want to display Location on single page like default post, you need to copy your theme single.php and rename to single-location.php
+
+you need to replace content section by following short-code
+
+`<?php echo do_shortcode('[location_single id="'.get_the_ID().'"]'); ?>`
+
+Also you can display any location with static id like this inside post or page content.
+
+`[location_single id="1234"]`
 
 == Installation ==
 

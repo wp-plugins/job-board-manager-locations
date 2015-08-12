@@ -1,7 +1,7 @@
 === Job Board Manager - Locations ===
 	Contributors: pickplugins
 	Donate link: http://paratheme.com
-	Tags:  Company Location, Job Board Manager, Job Board, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
+	Tags:  Company Location, Job Location, Job city,  Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 4.2.2
 	Stable tag: 1.0.0
@@ -12,15 +12,11 @@
 
 == Description ==
 
-Awesome location single page and display job list under any location via single page.
-
-Addon create for "Job Board Manager" plugin to support location.
-
-###Job Board Manager https://wordpress.org/plugins/job-board-manager/
+"Job Board Manager - Locations" allowes you to display ajax list of predefined location on job edit page and available job list under any location for "Job Board Manager" plugin.
 
 
 ### Job Board Manager - Locations by http://pickplugins.com
-
+* [Job Board Manager &raquo;](https://wordpress.org/plugins/job-board-manager/)
 
 
 

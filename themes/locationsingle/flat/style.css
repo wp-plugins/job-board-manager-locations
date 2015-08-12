@@ -14,7 +14,9 @@
   height: 100%;
   width: 100%;
 }
-
+.location-single #map img {
+  width: 100%;
+}
 .location-single .logo {
   display: inline-block;
   height: 50px;

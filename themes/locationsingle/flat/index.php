@@ -11,6 +11,14 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	$job_bm_locations_map_type = get_option('job_bm_locations_map_type');
 	$job_bm_locations_map_zoom = get_option('job_bm_locations_map_zoom');	
 	
+	if(empty($job_bm_locations_map_type)){
+		
+		$job_bm_locations_map_type = 'static';
+		}
+	
+	
+	
+	
 	$location_post_data = get_post($location_id);
 	
 	$job_bm_location_country_code = get_post_meta($location_id,'job_bm_location_country_code', true);	
@@ -27,10 +35,9 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	
 	$html .= '<div class="location-single">';	
 	
+	if($job_bm_locations_map_type=='dynamic'){
+		
 	$html .= '<div class="map-container"><div id="map"></div></div>';
-	
-	
-	
 	$html .= '<script>
 
 function initMap() {
@@ -52,9 +59,19 @@ function initMap() {
 	
 	
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
+        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>';
+		}
+	elseif($job_bm_locations_map_type=='static'){
+		
+		$html .= '<div class="map-container"><div id="map"><img src="https://maps.googleapis.com/maps/api/staticmap?center='.$job_bm_location_latlang['lat'].','.$job_bm_location_latlang['lng'].'&zoom='.$job_bm_locations_map_zoom.'&size=1000x300&markers=color:red|label:C|'.$job_bm_location_latlang['lat'].','.$job_bm_location_latlang['lng'].'"/></div></div>';
+		}
 	
-	';	
+	
+
+	
+	
+	
+	
 	
 		
 	$html .= '<div class="logo"><img src="'.job_bm_locations_plugin_url.'/themes/locationsingle/flat/images/map.png" /></div>';

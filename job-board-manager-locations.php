@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager - Locations
 Plugin URI: http://paratheme.com
 Description: Awesome location single page and display job list under any location via single page.
-Version: 1.0.1
+Version: 1.0.2
 Author: paratheme
 Author URI: http://paratheme.com
 License: GPLv2 or later
@@ -26,7 +26,7 @@ class JobBoardManagerLocations{
 	define('job_bm_locations_conatct_url', 'http://paratheme.com/contact/' );
 	define('job_bm_locations_qa_url', 'http://paratheme.com/qa/' );
 	define('job_bm_locations_plugin_name', 'Job Board Manager' );
-	define('job_bm_locations_plugin_version', '1.0.1' );
+	define('job_bm_locations_plugin_version', '1.0.2' );
 	define('job_bm_locations_customer_type', 'free' );	 // pro & free	
 	define('job_bm_locations_share_url', 'https://wordpress.org/plugins/job-board-manager/' );
 	define('job_bm_locations_tutorial_video_url', '//www.youtube.com/embed/YXwUFSU23iU?rel=0' );
@@ -68,6 +68,10 @@ class JobBoardManagerLocations{
 	public function job_bm_locations_front_scripts(){
 		
 		wp_enqueue_script('jquery');
+
+		wp_enqueue_script('job_bm_locations_js', plugins_url( '/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
+		wp_localize_script( 'job_bm_locations_js', 'job_bm_locations_ajax', array( 'job_bm_locations_ajaxurl' => admin_url( 'admin-ajax.php')));
+
 
 		wp_enqueue_style('job_bm_locations_style', job_bm_locations_plugin_url.'css/style.css');
 

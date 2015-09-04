@@ -11,21 +11,25 @@ class class_job_bm_locations_shortcodes{
 	
     public function __construct(){
 		
-		add_shortcode( 'location_list', array( $this, 'job_bm_locations_locationlist_display' ) );
+		add_shortcode( 'job_count_by_location', array( $this, 'job_bm_job_count_by_location_display' ) );
 		add_shortcode( 'location_single', array( $this, 'job_bm_locations_locationsingle_display' ) );		
 
    		}
 		
 		
 
-	public function job_bm_locations_locationlist_display($atts, $content = null ) {
+	public function job_bm_job_count_by_location_display($atts, $content = null ) {
 			$atts = shortcode_atts(
 				array(
 					'themes' => 'flat',
+					'max_item' => 2,					
+					
 					), $atts);
 	
 			$html = '';
 			$themes = $atts['themes'];
+			$max_item = $atts['max_item'];			
+			
 			
 			//$job_bm_locations_themes = get_post_meta( $post_id, 'job_bm_locations_themes', true );
 			//$job_bm_locations_license_key = get_option('job_bm_locations_license_key');
@@ -39,14 +43,14 @@ class class_job_bm_locations_shortcodes{
 */
 			
 			$class_job_bm_locations_functions = new class_job_bm_locations_functions();
-			$job_bm_locations_locationlist_themes_dir = $class_job_bm_locations_functions->job_bm_locations_locationlist_themes_dir();
-			$job_bm_locations_locationlist_themes_url = $class_job_bm_locations_functions->job_bm_locations_locationlist_themes_url();
+			$job_count_by_location_themes_dir = $class_job_bm_locations_functions->job_count_by_location_themes_dir();
+			$job_count_by_location_themes_url = $class_job_bm_locations_functions->job_count_by_location_themes_url();
 
 			
 			
-			echo '<link  type="text/css" media="all" rel="stylesheet"  href="'.$job_bm_locations_locationlist_themes_url[$themes].'/style.css" >';				
+			echo '<link  type="text/css" media="all" rel="stylesheet"  href="'.$job_count_by_location_themes_url[$themes].'/style.css" >';				
 
-			include $job_bm_locations_locationlist_themes_dir[$themes].'/index.php';				
+			include $job_count_by_location_themes_dir[$themes].'/index.php';				
 
 			return $html;
 	

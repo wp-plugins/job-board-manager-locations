@@ -4,7 +4,7 @@
 	Tags:  Company Location, Job Location, Job city,  Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 4.2.4
-	Stable tag: 1.0.0
+	Stable tag: 1.0.1
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,20 @@ Also you can display any location with static id like this inside post or page c
 
 `[location_single id="1234"]`
 
+<strong>Job Count by Location</strong>
+
+you can display job count by locations as widget via short-codes on sidebar or page content
+
+`[job_count_by_location max_item="10"]`
+
+Parameter:
+
+themes => flat
+max_item => any interger value.
+
+
+
+
 == Installation ==
 
 1. Install as regular WordPress plugin.<br />
@@ -51,5 +65,8 @@ Also you can display any location with static id like this inside post or page c
 == Changelog ==
 
 
+	= 1.0.1 =
+    * 04/09/2015 - add - display job count by locations.
+    
 	= 1.0.0 =
     * 11/08/2015 Initial release.

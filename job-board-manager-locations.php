@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager - Locations
 Plugin URI: http://paratheme.com
 Description: Awesome location single page and display job list under any location via single page.
-Version: 1.0.0
+Version: 1.0.1
 Author: paratheme
 Author URI: http://paratheme.com
 License: GPLv2 or later
@@ -26,7 +26,7 @@ class JobBoardManagerLocations{
 	define('job_bm_locations_conatct_url', 'http://paratheme.com/contact/' );
 	define('job_bm_locations_qa_url', 'http://paratheme.com/qa/' );
 	define('job_bm_locations_plugin_name', 'Job Board Manager' );
-	define('job_bm_locations_plugin_version', '1.0.0' );
+	define('job_bm_locations_plugin_version', '1.0.1' );
 	define('job_bm_locations_customer_type', 'free' );	 // pro & free	
 	define('job_bm_locations_share_url', 'https://wordpress.org/plugins/job-board-manager/' );
 	define('job_bm_locations_tutorial_video_url', '//www.youtube.com/embed/YXwUFSU23iU?rel=0' );
@@ -45,6 +45,9 @@ class JobBoardManagerLocations{
 	add_action( 'wp_enqueue_scripts', array( $this, 'job_bm_locations_front_scripts' ) );
 	add_action( 'admin_enqueue_scripts', array( $this, 'job_bm_locations_admin_scripts' ) );
 	
+	
+	
+	add_filter('widget_text', 'do_shortcode');
 	}
 	
 	public function job_bm_locations_install(){

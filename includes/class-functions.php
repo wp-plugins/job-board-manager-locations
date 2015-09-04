@@ -10,13 +10,17 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 class class_job_bm_locations_functions{
 	
 
-	public function job_bm_locations_locationlist_themes($themes = array()){
+
+
+
+
+	public function job_count_by_location_themes($themes = array()){
 
 			$themes = array(
 							'flat'=>'Flat',			
 							);
 			
-			foreach(apply_filters( 'job_bm_locations_locationlist_themes', $themes ) as $theme_key=> $theme_name)
+			foreach(apply_filters( 'job_count_by_location_themes', $themes ) as $theme_key=> $theme_name)
 				{
 					$theme_list[$theme_key] = $theme_name;
 				}
@@ -27,16 +31,16 @@ class class_job_bm_locations_functions{
 		}
 	
 		
-	public function job_bm_locations_locationlist_themes_dir($themes_dir = array()){
+	public function job_count_by_location_themes_dir($themes_dir = array()){
 		
-			$main_dir = job_bm_locations_plugin_dir.'themes/locationlist/';
+			$main_dir = job_bm_locations_plugin_dir.'themes/job-count-by-location/';
 			
 			$themes_dir = array(
 							'flat'=>$main_dir.'flat',
 				
 							);
 			
-			foreach(apply_filters( 'job_bm_locations_locationlist_themes_dir', $themes_dir ) as $theme_key=> $theme_dir)
+			foreach(apply_filters( 'job_count_by_location_themes_dir', $themes_dir ) as $theme_key=> $theme_dir)
 				{
 					$theme_list_dir[$theme_key] = $theme_dir;
 				}
@@ -47,16 +51,16 @@ class class_job_bm_locations_functions{
 		}
 
 
-	public function job_bm_locations_locationlist_themes_url($themes_url = array()){
+	public function job_count_by_location_themes_url($themes_url = array()){
 		
-			$main_url = job_bm_locations_plugin_url.'themes/locationlist/';
+			$main_url = job_bm_locations_plugin_url.'themes/job-count-by-location/';
 			
 			$themes_url = array(
 							'flat'=>$main_url.'flat',
 				
 							);
 			
-			foreach(apply_filters( 'job_bm_locations_locationlist_themes_url', $themes_url ) as $theme_key=> $theme_url)
+			foreach(apply_filters( 'job_count_by_location_themes_url', $themes_url ) as $theme_key=> $theme_url)
 				{
 					$theme_list_url[$theme_key] = $theme_url;
 				}

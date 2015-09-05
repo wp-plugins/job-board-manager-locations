@@ -91,8 +91,9 @@ function initMap() {
 		
 		if(!empty($job_bm_display_wiki_content) && $job_bm_display_wiki_content=='yes'){
 			
-				$wiki_content_json = json_decode(file_get_contents('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles='.$location_post_data->post_title),true);
-				
+				$wiki_content_json = json_decode(file_get_contents('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles='.str_replace(' ','_',$location_post_data->post_title)),true);
+		
+				 
 				foreach($wiki_content_json['query'] as $query){
 		
 					foreach($query as $normalized){

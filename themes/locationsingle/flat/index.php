@@ -82,7 +82,47 @@ function initMap() {
 	
 
 	$html .= '<div class="name">'.$location_post_data->post_title.'<span class="country">'.$job_bm_locations_country_list[$job_bm_location_country_code].'</span></div>';	
-	$html .= '<div class="content">'.wpautop($location_post_data->post_content).'</div>';	
+	
+	$location_content = $location_post_data->post_content;
+	
+	if(empty($location_content)){
+		
+		$job_bm_display_wiki_content = get_option('job_bm_display_wiki_content');
+		
+		if(!empty($job_bm_display_wiki_content) && $job_bm_display_wiki_content=='yes'){
+			
+				$wiki_content_json = json_decode(file_get_contents('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles='.$location_post_data->post_title),true);
+				
+				foreach($wiki_content_json['query'] as $query){
+		
+					foreach($query as $normalized){
+						
+							$page_content = $normalized['extract'];
+						}
+					}
+				
+				//var_dump($wiki_content_json);
+				//var_dump($wiki_content_json['query']['pages']['56656']['extract']);
+			
+				$html .= '<div class="content"><strong>'.__('Source:','job_bm_location').' wikipedia.org</strong><br/>'.$page_content.'</div>';	
+			
+			}
+		else{
+			
+			$html .= '<div class="content"></div>';	
+			}
+		
+		
+
+		}
+	else{
+		$html .= '<div class="content">'.wpautop($location_content).'</div>';	
+		}
+	
+	
+	
+	
+	
 	
 	$html .= '<div class="job-list-header">'.__('Jobs available from - '.$location_post_data->post_title.'','job_bm_locations').'</div>';		
 	$html .= do_shortcode('[job_list meta_keys="job_bm_location" location="'.$location_post_data->post_title.'"]');

@@ -3,8 +3,8 @@
 	Donate link: http://paratheme.com
 	Tags:  Company Location, Job Location, Job city,  Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
-	Tested up to: 4.2.4
-	Stable tag: 1.0.2
+	Tested up to: 4.3
+	Stable tag: 1.0.3
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,8 @@ max_item => any interger value.
 
 == Changelog ==
 
+	= 1.0.3 =
+    * 05/09/2015 - add - Display location info for wikipedia.org.
 
 	= 1.0.2 =
     * 04/09/2015 - add - front-end ajax locations suggest.

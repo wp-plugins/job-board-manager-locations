@@ -54,6 +54,18 @@ function job_bm_locations_settings_options_extra($options){
 									'input_type'=>'text', // text, radio, checkbox, select, 
 									'input_values'=> '12', // could be array
 									),
+									
+								'job_bm_display_wiki_content'=>array(
+									'css_class'=>'display_wiki_content',					
+									'title'=>'Display Content from Wikipedia ?',
+									'option_details'=>'Location content on single page display from wikipidea when empty.',						
+									'input_type'=>'select', // text, radio, checkbox, select, 
+									'input_values'=> 'yes', // could be array
+									'input_args'=> array('yes'=>'Yes','no'=>'No'), // could be array									
+									),									
+									
+									
+									
 
 									
 								);
